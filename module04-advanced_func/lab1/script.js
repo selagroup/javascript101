@@ -14,6 +14,33 @@
            
 */
 
+function printArray(arr){
+   var i;
+   var j;
+   for( i=0; i<arr.length; i++){
+     j=i;
+    //  (function(inx){
+        setTimeout(function(){
+            console.log('index '+inx+':'+arr[inx]);
+        },(i+1)*1000);
+    //  }(i))
+   
+  }
+  console.log(i);
+}
+
+function printArrayES6(arr){
+
+   for(let i=0; i<arr.length; i++){
+        setTimeout(function(){
+            console.log('index '+i+':'+arr[i]);
+        },(i+1)*1000);
+   
+  }
+  console.log(i);
+}
+
+printArrayES6([1,2,3,4]);
 
 
 

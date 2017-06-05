@@ -91,7 +91,7 @@ let counter = (function(){
     let end_count =0;
     let tickContext=null;
 
-    function init(start,end,onTick,onTickContext){
+    function init(start,end,onTick=count=>console.log(count),onTickContext){
 
         start_count=start;
         end_count=end;
@@ -134,7 +134,10 @@ let myCounter={
     start:function(){
 
         let fn = this.increment.bind(this);
-        counter(0,5,fn);
+        //counter(0,5,fn);
+        counter(0,5,(count) => {
+            this.increment(count)
+        });
     },
     increment:function(count){
         console.log(count);
@@ -146,6 +149,37 @@ myCounter.start();
 setTimeout(function(){
     console.log('my Counter: '+ myCounter.myCount);
 },6000);
+
+function sayHello(job,name){
+
+    console.log('Hello my name is '+name +' and i am a '+job);
+}
+
+
+sayHello('teacher','nir');
+let sayHelloToTeacher = sayHello.bind(null,'teacher');
+let sayHelloToDesigner = sayHello.bind(null,'designer');
+sayHelloToTeacher('nir');
+sayHelloToDesigner('yossi');
+
+let func = (name) => {
+    console.log('Hi '+name);
+}
+
+let sumArrow = (a,b) => a+b;
+
+let toUpper = str => str.toUpperCase();
+
+
+func('nir');
+console.log(sumArrow(1,2));
+console.log(toUpper('nir'));
+
+
+
+
+
+
 
 
 
