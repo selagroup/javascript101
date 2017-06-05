@@ -54,4 +54,16 @@ for(let i=0; i<arr.length;i++){
 arr.forEach(function(item,inx,arr){
     console.log('item '+' '+item+', '+inx+ 'of '+arr.length);
 });
+let num;
+console.log( num || 28 );
+let str='12';
+console.log( typeof(parseInt(str)) );
+
+console.log( typeof(parseInt('sdfsdfsd')) );
+console.log( isNaN(parseInt('sdfsdfsd')) );
+console.log( typeof(+str) );
+
+let num1;
+console.log( num1 );
+console.log( !!num1 ); 
 
