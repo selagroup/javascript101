@@ -15,7 +15,7 @@ let id=0;
 function RandomTimer(){
     
     id++
-    let rand=(Math.random() * (5 - 1) + 1)*1000;
+    let rand=(Math.random() * 5)*1000;
     console.log(rand);
     return new Promise((resolve,reject)=>{
         setTimeout((id)=>{
